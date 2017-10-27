@@ -47,7 +47,6 @@ test_support_sources = [
     "src/ssl/test/test_config.h",
 ]
 
-
 crypto_test_sources = [
     "crypto_test_data.cc",
     "src/crypto/asn1/asn1_test.cc",
@@ -100,5 +99,6 @@ crypto_test_sources = [
 
 ssl_test_sources = [
     "src/crypto/test/gtest_main.cc",
+    "src/ssl/span_test.cc",
     "src/ssl/ssl_test.cc",
 ]
