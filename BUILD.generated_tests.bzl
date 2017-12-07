@@ -8,7 +8,7 @@ test_support_sources = [
     "src/crypto/conf/conf_def.h",
     "src/crypto/conf/internal.h",
     "src/crypto/curve25519/internal.h",
-    "src/crypto/digest_extra/internal.h",
+    "src/crypto/err/internal.h",
     "src/crypto/evp/internal.h",
     "src/crypto/fipsmodule/aes/internal.h",
     "src/crypto/fipsmodule/bn/internal.h",
@@ -43,6 +43,7 @@ test_support_sources = [
     "src/ssl/internal.h",
     "src/ssl/test/async_bio.h",
     "src/ssl/test/fuzzer.h",
+    "src/ssl/test/fuzzer_tags.h",
     "src/ssl/test/packeted_bio.h",
     "src/ssl/test/test_config.h",
 ]
