@@ -23,6 +23,7 @@ test_support_sources = [
     "src/crypto/fipsmodule/modes/internal.h",
     "src/crypto/fipsmodule/rand/internal.h",
     "src/crypto/fipsmodule/rsa/internal.h",
+    "src/crypto/fipsmodule/tls/internal.h",
     "src/crypto/internal.h",
     "src/crypto/obj/obj_dat.h",
     "src/crypto/pkcs7/internal.h",
@@ -45,6 +46,7 @@ test_support_sources = [
     "src/ssl/test/fuzzer_tags.h",
     "src/ssl/test/packeted_bio.h",
     "src/ssl/test/test_config.h",
+    "src/third_party/fiat/curve25519_tables.h",
     "src/third_party/fiat/internal.h",
 ]
 
@@ -91,6 +93,7 @@ crypto_test_sources = [
     "src/crypto/pool/pool_test.cc",
     "src/crypto/refcount_test.cc",
     "src/crypto/rsa_extra/rsa_test.cc",
+    "src/crypto/self_test.cc",
     "src/crypto/test/file_test_gtest.cc",
     "src/crypto/test/gtest_main.cc",
     "src/crypto/thread_test.cc",
