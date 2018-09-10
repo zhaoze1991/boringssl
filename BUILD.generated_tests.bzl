@@ -46,8 +46,11 @@ test_support_sources = [
     "src/ssl/test/async_bio.h",
     "src/ssl/test/fuzzer.h",
     "src/ssl/test/fuzzer_tags.h",
+    "src/ssl/test/handshake_util.h",
     "src/ssl/test/packeted_bio.h",
+    "src/ssl/test/settings_writer.h",
     "src/ssl/test/test_config.h",
+    "src/ssl/test/test_state.h",
     "src/third_party/fiat/curve25519_tables.h",
     "src/third_party/fiat/internal.h",
 ]
@@ -100,6 +103,7 @@ crypto_test_sources = [
     "src/crypto/test/gtest_main.cc",
     "src/crypto/thread_test.cc",
     "src/crypto/x509/x509_test.cc",
+    "src/crypto/x509/x509_time_test.cc",
     "src/crypto/x509v3/tab_test.cc",
     "src/crypto/x509v3/v3name_test.cc",
 ]
@@ -111,7 +115,6 @@ ssl_test_sources = [
 ]
 
 crypto_test_data = [
-    "src/crypto/cipher_extra/test/aes_128_cbc_sha1_ssl3_tests.txt",
     "src/crypto/cipher_extra/test/aes_128_cbc_sha1_tls_implicit_iv_tests.txt",
     "src/crypto/cipher_extra/test/aes_128_cbc_sha1_tls_tests.txt",
     "src/crypto/cipher_extra/test/aes_128_cbc_sha256_tls_tests.txt",
@@ -120,7 +123,6 @@ crypto_test_data = [
     "src/crypto/cipher_extra/test/aes_128_ctr_hmac_sha256.txt",
     "src/crypto/cipher_extra/test/aes_128_gcm_siv_tests.txt",
     "src/crypto/cipher_extra/test/aes_128_gcm_tests.txt",
-    "src/crypto/cipher_extra/test/aes_256_cbc_sha1_ssl3_tests.txt",
     "src/crypto/cipher_extra/test/aes_256_cbc_sha1_tls_implicit_iv_tests.txt",
     "src/crypto/cipher_extra/test/aes_256_cbc_sha1_tls_tests.txt",
     "src/crypto/cipher_extra/test/aes_256_cbc_sha256_tls_tests.txt",
@@ -130,7 +132,6 @@ crypto_test_data = [
     "src/crypto/cipher_extra/test/aes_256_gcm_tests.txt",
     "src/crypto/cipher_extra/test/chacha20_poly1305_tests.txt",
     "src/crypto/cipher_extra/test/cipher_tests.txt",
-    "src/crypto/cipher_extra/test/des_ede3_cbc_sha1_ssl3_tests.txt",
     "src/crypto/cipher_extra/test/des_ede3_cbc_sha1_tls_implicit_iv_tests.txt",
     "src/crypto/cipher_extra/test/des_ede3_cbc_sha1_tls_tests.txt",
     "src/crypto/cipher_extra/test/nist_cavp/aes_128_cbc.txt",
