@@ -51,6 +51,7 @@ fips_fragments = [
     "src/crypto/fipsmodule/ec/simple_mul.c",
     "src/crypto/fipsmodule/ec/util.c",
     "src/crypto/fipsmodule/ec/wnaf.c",
+    "src/crypto/fipsmodule/ecdh/ecdh.c",
     "src/crypto/fipsmodule/ecdsa/ecdsa.c",
     "src/crypto/fipsmodule/hmac/hmac.c",
     "src/crypto/fipsmodule/md4/md4.c",
@@ -84,7 +85,6 @@ ssl_internal_headers = [
 
 ssl_sources = [
     "src/ssl/bio_ssl.cc",
-    "src/ssl/custom_extensions.cc",
     "src/ssl/d1_both.cc",
     "src/ssl/d1_lib.cc",
     "src/ssl/d1_pkt.cc",
@@ -199,6 +199,7 @@ crypto_internal_headers = [
     "src/crypto/asn1/asn1_locl.h",
     "src/crypto/bio/internal.h",
     "src/crypto/bytestring/internal.h",
+    "src/crypto/chacha/internal.h",
     "src/crypto/cipher_extra/internal.h",
     "src/crypto/conf/conf_def.h",
     "src/crypto/conf/internal.h",
@@ -315,7 +316,7 @@ crypto_sources = [
     "src/crypto/dsa/dsa.c",
     "src/crypto/dsa/dsa_asn1.c",
     "src/crypto/ec_extra/ec_asn1.c",
-    "src/crypto/ecdh/ecdh.c",
+    "src/crypto/ecdh_extra/ecdh_extra.c",
     "src/crypto/ecdsa_extra/ecdsa_asn1.c",
     "src/crypto/engine/engine.c",
     "src/crypto/err/err.c",
