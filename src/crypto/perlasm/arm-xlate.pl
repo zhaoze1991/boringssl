@@ -143,6 +143,10 @@ ___
 print "#if defined(__arm__)\n" if ($flavour eq "linux32");
 print "#if defined(__aarch64__)\n" if ($flavour eq "linux64");
 
+print "#if defined(BORINGSSL_PREFIX)\n";
+print "#include <boringssl_prefix_symbols_asm.h>\n";
+print "#endif\n";
+
 while(my $line=<>) {
 
     if ($line =~ m/^\s*(#|@|\/\/)/)	{ print $line; next; }
@@ -190,6 +194,6 @@ while(my $line=<>) {
 }
 
 print "#endif\n" if ($flavour eq "linux32" || $flavour eq "linux64");
-print "#endif  // !OPENSSL_NO_ASM";
+print "#endif  // !OPENSSL_NO_ASM\n";
 
 close STDOUT;

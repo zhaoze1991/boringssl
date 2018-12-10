@@ -6,6 +6,9 @@
 
 #if !defined(OPENSSL_NO_ASM)
 #if defined(__aarch64__)
+#if defined(BORINGSSL_PREFIX)
+#include <boringssl_prefix_symbols_asm.h>
+#endif
 // Copyright 2014-2016 The OpenSSL Project Authors. All Rights Reserved.
 //
 // Licensed under the OpenSSL license (the "License").  You may not use
@@ -1078,6 +1081,7 @@ sha512_block_data_order:
 .align	2
 #ifndef	__KERNEL__
 .comm	OPENSSL_armcap_P,4,4
+.hidden	OPENSSL_armcap_P
 #endif
 #endif
 #endif  // !OPENSSL_NO_ASM

@@ -5,6 +5,9 @@
 #endif
 
 #if !defined(OPENSSL_NO_ASM)
+#if defined(BORINGSSL_PREFIX)
+#include <boringssl_prefix_symbols_asm.h>
+#endif
 #include <openssl/arm_arch.h>
 
 .text
@@ -1227,4 +1230,5 @@ LOPENSSL_armcap_P:
 .align	2
 .align	2
 .comm	_OPENSSL_armcap_P,4,4
+.private_extern	_OPENSSL_armcap_P
 #endif  // !OPENSSL_NO_ASM

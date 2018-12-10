@@ -6,6 +6,9 @@
 
 #if !defined(OPENSSL_NO_ASM)
 #if defined(__arm__)
+#if defined(BORINGSSL_PREFIX)
+#include <boringssl_prefix_symbols_asm.h>
+#endif
 #include <openssl/arm_arch.h>
 
 #if __ARM_MAX_ARCH__>=7
