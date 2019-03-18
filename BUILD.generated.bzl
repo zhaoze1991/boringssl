@@ -161,6 +161,7 @@ crypto_headers = [
     "src/include/openssl/ex_data.h",
     "src/include/openssl/hkdf.h",
     "src/include/openssl/hmac.h",
+    "src/include/openssl/hrss.h",
     "src/include/openssl/is_boringssl.h",
     "src/include/openssl/lhash.h",
     "src/include/openssl/md4.h",
@@ -220,6 +221,7 @@ crypto_internal_headers = [
     "src/crypto/fipsmodule/rand/internal.h",
     "src/crypto/fipsmodule/rsa/internal.h",
     "src/crypto/fipsmodule/tls/internal.h",
+    "src/crypto/hrss/internal.h",
     "src/crypto/internal.h",
     "src/crypto/obj/obj_dat.h",
     "src/crypto/pkcs7/internal.h",
@@ -340,6 +342,7 @@ crypto_sources = [
     "src/crypto/fipsmodule/bcm.c",
     "src/crypto/fipsmodule/is_fips.c",
     "src/crypto/hkdf/hkdf.c",
+    "src/crypto/hrss/hrss.c",
     "src/crypto/lhash/lhash.c",
     "src/crypto/mem.c",
     "src/crypto/obj/obj.c",
@@ -572,6 +575,8 @@ crypto_sources_linux_x86_64 = [
     "linux-x86_64/crypto/fipsmodule/vpaes-x86_64.S",
     "linux-x86_64/crypto/fipsmodule/x86_64-mont.S",
     "linux-x86_64/crypto/fipsmodule/x86_64-mont5.S",
+    "linux-x86_64/crypto/test/trampoline-x86_64.S",
+    "src/crypto/hrss/asm/poly_rq_mul.S",
 ]
 
 crypto_sources_mac_x86 = [
@@ -609,6 +614,7 @@ crypto_sources_mac_x86_64 = [
     "mac-x86_64/crypto/fipsmodule/vpaes-x86_64.S",
     "mac-x86_64/crypto/fipsmodule/x86_64-mont.S",
     "mac-x86_64/crypto/fipsmodule/x86_64-mont5.S",
+    "mac-x86_64/crypto/test/trampoline-x86_64.S",
 ]
 
 crypto_sources_win_x86 = [
@@ -646,4 +652,5 @@ crypto_sources_win_x86_64 = [
     "win-x86_64/crypto/fipsmodule/vpaes-x86_64.asm",
     "win-x86_64/crypto/fipsmodule/x86_64-mont.asm",
     "win-x86_64/crypto/fipsmodule/x86_64-mont5.asm",
+    "win-x86_64/crypto/test/trampoline-x86_64.asm",
 ]
