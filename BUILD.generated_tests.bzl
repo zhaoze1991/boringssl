@@ -22,9 +22,11 @@ test_support_sources = [
     "src/crypto/fipsmodule/ec/internal.h",
     "src/crypto/fipsmodule/ec/p256-x86_64-table.h",
     "src/crypto/fipsmodule/ec/p256-x86_64.h",
+    "src/crypto/fipsmodule/md5/internal.h",
     "src/crypto/fipsmodule/modes/internal.h",
     "src/crypto/fipsmodule/rand/internal.h",
     "src/crypto/fipsmodule/rsa/internal.h",
+    "src/crypto/fipsmodule/sha/internal.h",
     "src/crypto/fipsmodule/tls/internal.h",
     "src/crypto/hrss/internal.h",
     "src/crypto/internal.h",
@@ -33,7 +35,6 @@ test_support_sources = [
     "src/crypto/pkcs8/internal.h",
     "src/crypto/poly1305/internal.h",
     "src/crypto/pool/internal.h",
-    "src/crypto/test/abi_test.cc",
     "src/crypto/test/abi_test.h",
     "src/crypto/test/file_test.cc",
     "src/crypto/test/file_test.h",
@@ -57,8 +58,12 @@ test_support_sources = [
     "src/ssl/test/settings_writer.h",
     "src/ssl/test/test_config.h",
     "src/ssl/test/test_state.h",
+    "src/third_party/fiat/curve25519_32.h",
+    "src/third_party/fiat/curve25519_64.h",
     "src/third_party/fiat/curve25519_tables.h",
     "src/third_party/fiat/internal.h",
+    "src/third_party/fiat/p256_32.h",
+    "src/third_party/fiat/p256_64.h",
 ]
 
 crypto_test_sources = [
@@ -93,11 +98,14 @@ crypto_test_sources = [
     "src/crypto/fipsmodule/ec/ec_test.cc",
     "src/crypto/fipsmodule/ec/p256-x86_64_test.cc",
     "src/crypto/fipsmodule/ecdsa/ecdsa_test.cc",
+    "src/crypto/fipsmodule/md5/md5_test.cc",
     "src/crypto/fipsmodule/modes/gcm_test.cc",
     "src/crypto/fipsmodule/rand/ctrdrbg_test.cc",
+    "src/crypto/fipsmodule/sha/sha_test.cc",
     "src/crypto/hkdf/hkdf_test.cc",
     "src/crypto/hmac_extra/hmac_test.cc",
     "src/crypto/hrss/hrss_test.cc",
+    "src/crypto/impl_dispatch_test.cc",
     "src/crypto/lhash/lhash_test.cc",
     "src/crypto/obj/obj_test.cc",
     "src/crypto/pem/pem_test.cc",
@@ -111,6 +119,7 @@ crypto_test_sources = [
     "src/crypto/rsa_extra/rsa_test.cc",
     "src/crypto/self_test.cc",
     "src/crypto/stack/stack_test.cc",
+    "src/crypto/test/abi_test.cc",
     "src/crypto/test/file_test_gtest.cc",
     "src/crypto/test/gtest_main.cc",
     "src/crypto/thread_test.cc",
@@ -121,6 +130,7 @@ crypto_test_sources = [
 ]
 
 ssl_test_sources = [
+    "src/crypto/test/abi_test.cc",
     "src/crypto/test/gtest_main.cc",
     "src/ssl/span_test.cc",
     "src/ssl/ssl_test.cc",
