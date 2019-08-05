@@ -64,6 +64,10 @@ test_support_sources = [
     "src/third_party/fiat/internal.h",
     "src/third_party/fiat/p256_32.h",
     "src/third_party/fiat/p256_64.h",
+    "src/third_party/sike/fpx.h",
+    "src/third_party/sike/isogeny.h",
+    "src/third_party/sike/sike.h",
+    "src/third_party/sike/utils.h",
 ]
 
 crypto_test_sources = [
@@ -133,6 +137,7 @@ ssl_test_sources = [
     "src/crypto/test/abi_test.cc",
     "src/crypto/test/gtest_main.cc",
     "src/ssl/span_test.cc",
+    "src/ssl/ssl_c_test.c",
     "src/ssl/ssl_test.cc",
 ]
 
