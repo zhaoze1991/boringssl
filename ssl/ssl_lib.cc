@@ -2867,7 +2867,8 @@ int SSL_set_esni_keys(SSL *ssl, const uint8_t *key_struct, size_t key_len) {
   CBS_init(&esni_keys, key_struct, key_len);
   if (!CBS_get_u16(&esni_keys, &version) ||
       version != ESNI_VERSION ||
-      !CBS_get_u16_length_prefixed(&esni_keys, &ssl->config->esni_public_name) ||
+      !CBS_get_u16_length_prefixed(&esni_keys,
+                                   &ssl->config->esni_public_name) ||
       !CBS_get_u16_length_prefixed(&esni_keys, &keys) ||
       !CBS_get_u16_length_prefixed(&esni_keys, &cipher_suites) ||
       !CBS_get_u16(&esni_keys, &ssl->config->esni_padded_length) ||
@@ -2878,9 +2879,9 @@ int SSL_set_esni_keys(SSL *ssl, const uint8_t *key_struct, size_t key_len) {
   // TODO(svaldez): Handle extensions.
 
   static const uint16_t kDefaultGroups[] = {
-    SSL_CURVE_X25519,
-    SSL_CURVE_SECP256R1,
-    SSL_CURVE_SECP384R1,
+      SSL_CURVE_X25519,
+      SSL_CURVE_SECP256R1,
+      SSL_CURVE_SECP384R1,
   };
   Span<const uint16_t> supp = Span<const uint16_t>(kDefaultGroups);
   if (!ssl->config->supported_group_list.empty()) {
@@ -2911,27 +2912,30 @@ int SSL_set_esni_keys(SSL *ssl, const uint8_t *key_struct, size_t key_len) {
   }
 
   ssl->config->esni_server_keyshare.CopyFrom(esni_keyshare_bytes);
-  ssl->config->esni_cipher = ssl_choose_tls13_cipher(cipher_suites,
-                                                     TLS1_3_VERSION,
-                                                     ssl->config->esni_group);
+  ssl->config->esni_cipher = ssl_choose_tls13_cipher(
+      cipher_suites, TLS1_3_VERSION, ssl->config->esni_group);
   if (!ssl->config->esni_cipher) {
     return false;
   }
 
-  const EVP_MD *digest = ssl_get_handshake_digest(TLS1_3_VERSION, ssl->config->esni_cipher);
+  const EVP_MD *digest =
+      ssl_get_handshake_digest(TLS1_3_VERSION, ssl->config->esni_cipher);
 
   uint8_t esni_digest[EVP_MAX_MD_SIZE];
   unsigned esni_digest_len;
-  if (!EVP_Digest(key_struct, key_len, esni_digest, &esni_digest_len, digest, NULL) ||
-      !ssl->config->esni_record_digest.CopyFrom(Span<uint8_t>(esni_digest, esni_digest_len))) {
+  if (!EVP_Digest(key_struct, key_len, esni_digest, &esni_digest_len, digest,
+                  NULL) ||
+      !ssl->config->esni_record_digest.CopyFrom(
+          Span<uint8_t>(esni_digest, esni_digest_len))) {
     return false;
   }
-  
+
   return true;
 }
 
 // TODO(svaldez): Support multiple ESNIKeys structs on the server.
-int SSL_set_esni_private_key(SSL *ssl, const uint8_t *pub, size_t pub_len, const uint8_t *priv, size_t priv_len) {
+int SSL_set_esni_private_key(SSL *ssl, const uint8_t *pub, size_t pub_len,
+                             const uint8_t *priv, size_t priv_len) {
   if (!ssl->config->enable_esni) {
     return false;
   }
@@ -2940,7 +2944,7 @@ int SSL_set_esni_private_key(SSL *ssl, const uint8_t *pub, size_t pub_len, const
   return true;
 }
 
-// Get Retry Keys.
+// TODO: Get Retry Keys.
 
 int SSL_clear(SSL *ssl) {
   if (!ssl->config) {

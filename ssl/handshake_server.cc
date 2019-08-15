@@ -544,7 +544,7 @@ static enum ssl_hs_wait_t do_read_client_hello(SSL_HANDSHAKE *hs) {
       ssl_send_alert(ssl, SSL3_AL_FATAL, SSL_AD_DECODE_ERROR);
       return ssl_hs_error;
     }
-    
+
     if (!CBS_get_u16_length_prefixed(&key_share, &kse_bytes) ||
         !hs->key_share_bytes.CopyFrom(
             MakeConstSpan(CBS_data(&kse_bytes), CBS_len(&kse_bytes)))) {
@@ -552,13 +552,14 @@ static enum ssl_hs_wait_t do_read_client_hello(SSL_HANDSHAKE *hs) {
       ssl_send_alert(ssl, SSL3_AL_FATAL, SSL_AD_DECODE_ERROR);
       return ssl_hs_error;
     }
+
     uint8_t alert = SSL_AD_DECODE_ERROR;
     if (!ssl_ext_encrypted_server_name_parse_clienthello(hs, &alert, &encrypted_sni)) {
       ssl_send_alert(ssl, SSL3_AL_FATAL, alert);
       return ssl_hs_error;
     }
   }
-  
+
   // Run the early callback.
   if (ssl->ctx->select_certificate_cb != NULL) {
     switch (ssl->ctx->select_certificate_cb(&client_hello)) {
@@ -602,7 +603,6 @@ static enum ssl_hs_wait_t do_read_client_hello(SSL_HANDSHAKE *hs) {
     ssl_send_alert(ssl, SSL3_AL_FATAL, SSL_AD_ILLEGAL_PARAMETER);
     return ssl_hs_error;
   }
-  
   // TLS extensions.
   if (!ssl_parse_clienthello_tlsext(hs, &client_hello)) {
     OPENSSL_PUT_ERROR(SSL, SSL_R_PARSE_TLSEXT);

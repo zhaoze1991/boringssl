@@ -2963,7 +2963,8 @@ static bool ext_pq_experiment_signal_add_serverhello(SSL_HANDSHAKE *hs,
 static bool ext_encrypted_server_name_add_clienthello(SSL_HANDSHAKE *hs,
                                                       CBB *out) {
   SSL *const ssl = hs->ssl;
-  if (!hs->config->enable_esni || SSL_is_dtls(ssl) || hs->config->esni_group == 0) {
+  if (!hs->config->enable_esni || SSL_is_dtls(ssl) ||
+      hs->config->esni_group == 0) {
     return true;
   }
 
@@ -2979,11 +2980,13 @@ static bool ext_encrypted_server_name_add_clienthello(SSL_HANDSHAKE *hs,
     return false;
   }
 
-  UniquePtr<SSLKeyShare> esni_client_share = SSLKeyShare::Create(ssl->config->esni_group);
+  UniquePtr<SSLKeyShare> esni_client_share =
+      SSLKeyShare::Create(ssl->config->esni_group);
   Array<uint8_t> shared_secret;
   uint8_t alert;
   if (!esni_client_share ||
-      !esni_client_share->Accept(&key_exchange, &shared_secret, &alert, ssl->config->esni_server_keyshare)) {
+      !esni_client_share->Accept(&key_exchange, &shared_secret, &alert,
+                                 ssl->config->esni_server_keyshare)) {
     return false;
   }
 
@@ -2993,7 +2996,7 @@ static bool ext_encrypted_server_name_add_clienthello(SSL_HANDSHAKE *hs,
       !CBB_add_u16_length_prefixed(&contents, &esni)) {
     return false;
   }
-      
+
   if (!RAND_bytes(hs->esni_nonce, sizeof(hs->esni_nonce))) {
     return false;
   }
@@ -3002,8 +3005,8 @@ static bool ext_encrypted_server_name_add_clienthello(SSL_HANDSHAKE *hs,
     return false;
   }
 
-  size_t padding_len = ssl->config->esni_padded_length - strlen(ssl->hostname.get());  
-  
+  size_t padding_len = ssl->config->esni_padded_length - strlen(ssl->hostname.get());
+
   CBB client_esni, dns_name;
   uint8_t *padding;
   if (!CBB_init(&client_esni, 0) ||
@@ -3017,11 +3020,16 @@ static bool ext_encrypted_server_name_add_clienthello(SSL_HANDSHAKE *hs,
   }
 
   OPENSSL_memset(padding, padding_len, 0);
-  size_t esni_max_len = CBB_len(&client_esni) + EVP_AEAD_max_overhead(hs->esni_aead_ctx->aead);
+  size_t esni_max_len =
+      CBB_len(&client_esni) + EVP_AEAD_max_overhead(hs->esni_aead_ctx->aead);
   Array<uint8_t> inner_esni;
   size_t inner_esni_len = 0;
   if (!inner_esni.Init(esni_max_len) ||
-      !EVP_AEAD_CTX_seal(hs->esni_aead_ctx.get(), inner_esni.data(), &inner_esni_len, esni_max_len, hs->esni_iv, hs->esni_iv_len, CBB_data(&client_esni), CBB_len(&client_esni), hs->key_share_bytes.data(), hs->key_share_bytes.size())) {
+      !EVP_AEAD_CTX_seal(hs->esni_aead_ctx.get(), inner_esni.data(),
+                         &inner_esni_len, esni_max_len, hs->esni_iv,
+                         hs->esni_iv_len, CBB_data(&client_esni),
+                         CBB_len(&client_esni), hs->key_share_bytes.data(),
+                         hs->key_share_bytes.size())) {
     return false;
   }
 
@@ -3029,7 +3037,7 @@ static bool ext_encrypted_server_name_add_clienthello(SSL_HANDSHAKE *hs,
       !CBB_flush(&esni)) {
     return false;
   }
-  
+
   return CBB_flush(out);
 }
 
@@ -3089,12 +3097,15 @@ bool ssl_ext_encrypted_server_name_parse_clienthello(SSL_HANDSHAKE *hs,
     return false;
   }
   hs->config->esni_cipher = SSL_get_cipher_by_value(cipher_id);
-  if (!hs->config->esni_record_digest.CopyFrom(MakeSpan(CBS_data(&record_digest), CBS_len(&record_digest)))) {
+  if (!hs->config->esni_record_digest.CopyFrom(
+          MakeSpan(CBS_data(&record_digest), CBS_len(&record_digest)))) {
     return false;
   }
   CBS server_keyshare;
-  CBS_init(&server_keyshare, ssl->config->esni_private.data(), ssl->config->esni_private.size());
-  UniquePtr<SSLKeyShare> esni_server_share = SSLKeyShare::Create(&server_keyshare);
+  CBS_init(&server_keyshare, ssl->config->esni_private.data(),
+           ssl->config->esni_private.size());
+  UniquePtr<SSLKeyShare> esni_server_share =
+      SSLKeyShare::Create(&server_keyshare);
 
   Array<uint8_t> shared_secret;
   uint8_t alert;
@@ -3110,7 +3121,11 @@ bool ssl_ext_encrypted_server_name_parse_clienthello(SSL_HANDSHAKE *hs,
   size_t inner_esni_len;
   size_t esni_max_len = CBS_len(&esni);
   if (!inner_esni.Init(esni_max_len) ||
-      !EVP_AEAD_CTX_open(hs->esni_aead_ctx.get(), inner_esni.data(), &inner_esni_len, esni_max_len, hs->esni_iv, hs->esni_iv_len, CBS_data(&esni), CBS_len(&esni), hs->key_share_bytes.data(), hs->key_share_bytes.size())) {
+      !EVP_AEAD_CTX_open(hs->esni_aead_ctx.get(), inner_esni.data(),
+                         &inner_esni_len, esni_max_len, hs->esni_iv,
+                         hs->esni_iv_len, CBS_data(&esni), CBS_len(&esni),
+                         hs->key_share_bytes.data(),
+                         hs->key_share_bytes.size())) {
     return false;
   }
 

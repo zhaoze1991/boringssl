@@ -1327,7 +1327,8 @@ enum ssl_esni_state_t {
 bool tls13_derive_esni_secrets(SSL_HANDSHAKE *hs, Array<uint8_t> shared_secret);
 
 bool ssl_ext_encrypted_server_name_parse_clienthello(SSL_HANDSHAKE *hs,
-                                                     uint8_t *out_alert, CBS *contents);
+                                                     uint8_t *out_alert,
+                                                     CBS *contents);
 
 
 // Handshake functions.
@@ -1585,10 +1586,10 @@ struct SSL_HANDSHAKE {
 
   uint8_t esni_iv[EVP_AEAD_MAX_NONCE_LENGTH];
   size_t esni_iv_len;
-  
+
   // esni_aead_ctx is the AEAD CTX to use with ESNI.
   ScopedEVP_AEAD_CTX esni_aead_ctx;
-  
+
   // scts_requested is true if the SCT extension is in the ClientHello.
   bool scts_requested : 1;
 

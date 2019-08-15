@@ -3909,14 +3909,27 @@ OPENSSL_EXPORT void SSL_set_jdk11_workaround(SSL *ssl, int enable);
 
 
 // ESNI functions.
+
+// SSL_set_enable_esni configures whether to use ESNI as part of this
+// connection.
 OPENSSL_EXPORT void SSL_set_enable_esni(SSL *ssl, int enable);
 
+// SSL_set_esni_keys sets the ESNIKeys structure that should be used for
+// connections to the server.
 OPENSSL_EXPORT int SSL_set_esni_keys(SSL *ssl, const uint8_t *key_struct,
                                      size_t key_len);
 
-OPENSSL_EXPORT int SSL_set_esni_private_key(SSL *ssl, const uint8_t *pub, size_t pub_len, const uint8_t *priv, size_t priv_len);
+// SSL_set_esni_private_key sets the keypair that the server should use to decrypt ESNI.
+//
+// TODO: Support multiple keypairs.
+OPENSSL_EXPORT int SSL_set_esni_private_key(SSL *ssl, const uint8_t *pub,
+                                            size_t pub_len, const uint8_t *priv,
+                                            size_t priv_len);
 
+// SSL_get_retry_keys returns the ESNIKeys structure that was returned by the
+// server if ESNI was rejected or a retry was requested.
 OPENSSL_EXPORT void SSL_get_retry_keys(SSL *ssl);
+
 
 // Deprecated functions.
 
