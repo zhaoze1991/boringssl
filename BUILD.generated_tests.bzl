@@ -64,10 +64,6 @@ test_support_sources = [
     "src/third_party/fiat/internal.h",
     "src/third_party/fiat/p256_32.h",
     "src/third_party/fiat/p256_64.h",
-    "src/third_party/sike/fpx.h",
-    "src/third_party/sike/isogeny.h",
-    "src/third_party/sike/sike.h",
-    "src/third_party/sike/utils.h",
 ]
 
 crypto_test_sources = [
@@ -184,6 +180,7 @@ crypto_test_data = [
     "src/crypto/evp/scrypt_tests.txt",
     "src/crypto/fipsmodule/aes/aes_tests.txt",
     "src/crypto/fipsmodule/bn/bn_tests.txt",
+    "src/crypto/fipsmodule/bn/miller_rabin_tests.txt",
     "src/crypto/fipsmodule/ec/ec_scalar_base_mult_tests.txt",
     "src/crypto/fipsmodule/ec/p256-x86_64_tests.txt",
     "src/crypto/fipsmodule/ecdsa/ecdsa_sign_tests.txt",
@@ -230,4 +227,8 @@ crypto_test_data = [
     "src/third_party/wycheproof_testvectors/rsa_pss_misc_test.txt",
     "src/third_party/wycheproof_testvectors/rsa_signature_test.txt",
     "src/third_party/wycheproof_testvectors/x25519_test.txt",
+]
+
+urandom_test_sources = [
+    "src/crypto/fipsmodule/rand/urandom_test.cc",
 ]
