@@ -14,10 +14,10 @@
 
 #include "cavp_test_util.h"
 
-#include <openssl/bn.h>
-#include <openssl/digest.h>
-#include <openssl/ec.h>
-#include <openssl/nid.h>
+#include <openssl_grpc/bn.h>
+#include <openssl_grpc/digest.h>
+#include <openssl_grpc/ec.h>
+#include <openssl_grpc/nid.h>
 
 
 const EVP_CIPHER *GetCipher(const std::string &name) {

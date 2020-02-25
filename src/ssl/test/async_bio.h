@@ -15,7 +15,7 @@
 #ifndef HEADER_ASYNC_BIO
 #define HEADER_ASYNC_BIO
 
-#include <openssl/bio.h>
+#include <openssl_grpc/bio.h>
 
 
 // AsyncBioCreate creates a filter BIO for testing asynchronous state

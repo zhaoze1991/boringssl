@@ -19,8 +19,8 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/crypto.h>
-#include <openssl/rand.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/rand.h>
 
 #include "test/test_util.h"
 

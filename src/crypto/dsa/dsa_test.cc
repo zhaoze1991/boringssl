@@ -57,7 +57,7 @@
  * The DSS routines are based on patches supplied by
  * Steven Schoch <schoch@sheba.arc.nasa.gov>. */
 
-#include <openssl/dsa.h>
+#include <openssl_grpc/dsa.h>
 
 #include <stdio.h>
 #include <string.h>
@@ -66,9 +66,9 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/bn.h>
-#include <openssl/crypto.h>
-#include <openssl/err.h>
+#include <openssl_grpc/bn.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/err.h>
 
 #include "../internal.h"
 

@@ -110,7 +110,7 @@
  * ECC cipher suite support in OpenSSL originally developed by
  * SUN MICROSYSTEMS, INC., and contributed to the OpenSSL project. */
 
-#include <openssl/ssl.h>
+#include <openssl_grpc/ssl.h>
 
 #include <assert.h>
 #include <limits.h>
@@ -118,15 +118,15 @@
 
 #include <tuple>
 
-#include <openssl/buf.h>
-#include <openssl/bytestring.h>
-#include <openssl/err.h>
-#include <openssl/evp.h>
-#include <openssl/mem.h>
-#include <openssl/md5.h>
-#include <openssl/nid.h>
-#include <openssl/rand.h>
-#include <openssl/sha.h>
+#include <openssl_grpc/buf.h>
+#include <openssl_grpc/bytestring.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/evp.h>
+#include <openssl_grpc/mem.h>
+#include <openssl_grpc/md5.h>
+#include <openssl_grpc/nid.h>
+#include <openssl_grpc/rand.h>
+#include <openssl_grpc/sha.h>
 
 #include "../crypto/internal.h"
 #include "internal.h"

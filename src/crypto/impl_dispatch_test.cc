@@ -12,7 +12,7 @@
  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. */
 
-#include <openssl/base.h>
+#include <openssl_grpc/base.h>
 
 #if defined(BORINGSSL_DISPATCH_TEST) && !defined(BORINGSSL_SHARED_LIBRARY)
 
@@ -20,10 +20,10 @@
 #include <utility>
 #include <vector>
 
-#include <openssl/aead.h>
-#include <openssl/aes.h>
-#include <openssl/cpu.h>
-#include <openssl/mem.h>
+#include <openssl_grpc/aead.h>
+#include <openssl_grpc/aes.h>
+#include <openssl_grpc/cpu.h>
+#include <openssl_grpc/mem.h>
 
 #include <gtest/gtest.h>
 

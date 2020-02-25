@@ -12,14 +12,14 @@
  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. */
 
-#include <openssl/rand.h>
+#include <openssl_grpc/rand.h>
 
 #include <stdio.h>
 
 #include <gtest/gtest.h>
 
-#include <openssl/cpu.h>
-#include <openssl/span.h>
+#include <openssl_grpc/cpu.h>
+#include <openssl_grpc/span.h>
 
 #include "../fipsmodule/rand/internal.h"
 #include "../test/abi_test.h"

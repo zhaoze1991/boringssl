@@ -18,7 +18,7 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/curve25519.h>
+#include <openssl_grpc/curve25519.h>
 
 #include "../internal.h"
 #include "../test/file_test.h"

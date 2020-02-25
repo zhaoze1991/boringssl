@@ -17,10 +17,10 @@
 
 #include <vector>
 
-#include <openssl/bn.h>
-#include <openssl/crypto.h>
-#include <openssl/digest.h>
-#include <openssl/rsa.h>
+#include <openssl_grpc/bn.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/digest.h>
+#include <openssl_grpc/rsa.h>
 
 #include "../crypto/internal.h"
 #include "../crypto/test/file_test.h"

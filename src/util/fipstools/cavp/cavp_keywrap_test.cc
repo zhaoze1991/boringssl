@@ -17,8 +17,8 @@
 
 #include <stdlib.h>
 
-#include <openssl/aes.h>
-#include <openssl/crypto.h>
+#include <openssl_grpc/aes.h>
+#include <openssl_grpc/crypto.h>
 
 #include "../crypto/test/file_test.h"
 #include "../crypto/test/test_util.h"

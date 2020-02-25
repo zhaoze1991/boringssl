@@ -17,7 +17,7 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/ssl.h>
+#include <openssl_grpc/ssl.h>
 
 BSSL_NAMESPACE_BEGIN
 namespace {

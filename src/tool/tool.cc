@@ -15,9 +15,9 @@
 #include <string>
 #include <vector>
 
-#include <openssl/crypto.h>
-#include <openssl/err.h>
-#include <openssl/ssl.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/ssl.h>
 
 #if defined(OPENSSL_WINDOWS)
 #include <fcntl.h>

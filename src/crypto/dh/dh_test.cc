@@ -54,7 +54,7 @@
  * copied and put under another distribution licence
  * [including the GNU Public Licence.] */
 
-#include <openssl/dh.h>
+#include <openssl_grpc/dh.h>
 
 #include <stdio.h>
 #include <string.h>
@@ -63,12 +63,12 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/bn.h>
-#include <openssl/bytestring.h>
-#include <openssl/crypto.h>
-#include <openssl/dh.h>
-#include <openssl/err.h>
-#include <openssl/mem.h>
+#include <openssl_grpc/bn.h>
+#include <openssl_grpc/bytestring.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/dh.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/mem.h>
 
 #include "../internal.h"
 

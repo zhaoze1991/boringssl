@@ -16,7 +16,7 @@
 #define _GNU_SOURCE  // needed for syscall() on Linux.
 #endif
 
-#include <openssl/rand.h>
+#include <openssl_grpc/rand.h>
 
 #include "internal.h"
 
@@ -62,8 +62,8 @@
 #include <sys/random.h>
 #endif
 
-#include <openssl/thread.h>
-#include <openssl/mem.h>
+#include <openssl_grpc/thread.h>
+#include <openssl_grpc/mem.h>
 
 #include "../delocate.h"
 #include "../../internal.h"

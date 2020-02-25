@@ -19,9 +19,9 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/cipher.h>
-#include <openssl/cmac.h>
-#include <openssl/mem.h>
+#include <openssl_grpc/cipher.h>
+#include <openssl_grpc/cmac.h>
+#include <openssl_grpc/mem.h>
 
 #include "../test/file_test.h"
 #include "../test/test_util.h"

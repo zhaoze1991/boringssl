@@ -14,8 +14,8 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/digest.h>
-#include <openssl/evp.h>
+#include <openssl_grpc/digest.h>
+#include <openssl_grpc/evp.h>
 
 #include "../internal.h"
 #include "../test/test_util.h"

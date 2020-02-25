@@ -14,8 +14,8 @@
 
 #include <stdio.h>
 
-#include <openssl/mem.h>
-#include <openssl/ssl.h>
+#include <openssl_grpc/mem.h>
+#include <openssl_grpc/ssl.h>
 
 struct GlobalState {
   GlobalState() : ctx(SSL_CTX_new(TLS_method())) {}

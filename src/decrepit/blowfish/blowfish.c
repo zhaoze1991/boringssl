@@ -54,9 +54,9 @@
  * copied and put under another distribution licence
  * [including the GNU Public Licence.] */
 
-#include <openssl/blowfish.h>
-#include <openssl/cipher.h>
-#include <openssl/obj.h>
+#include <openssl_grpc/blowfish.h>
+#include <openssl_grpc/cipher.h>
+#include <openssl_grpc/obj.h>
 
 #include <assert.h>
 #include <string.h>

@@ -53,8 +53,8 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/aes.h>
-#include <openssl/cpu.h>
+#include <openssl_grpc/aes.h>
+#include <openssl_grpc/cpu.h>
 
 #include "../../test/abi_test.h"
 #include "../../test/file_test.h"

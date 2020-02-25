@@ -15,9 +15,9 @@
 #ifndef HEADER_MOCK_QUIC_TRANSPORT
 #define HEADER_MOCK_QUIC_TRANSPORT
 
-#include <openssl/base.h>
-#include <openssl/bio.h>
-#include <openssl/ssl.h>
+#include <openssl_grpc/base.h>
+#include <openssl_grpc/bio.h>
+#include <openssl_grpc/ssl.h>
 
 #include <vector>
 

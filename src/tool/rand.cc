@@ -19,7 +19,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <openssl/rand.h>
+#include <openssl_grpc/rand.h>
 
 #include "internal.h"
 

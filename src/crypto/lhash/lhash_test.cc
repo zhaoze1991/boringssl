@@ -12,7 +12,7 @@
  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. */
 
-#include <openssl/lhash.h>
+#include <openssl_grpc/lhash.h>
 
 #include <stdio.h>
 #include <stdlib.h>

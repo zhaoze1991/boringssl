@@ -54,18 +54,18 @@
  * copied and put under another distribution licence
  * [including the GNU Public Licence.] */
 
-#include <openssl/rsa.h>
+#include <openssl_grpc/rsa.h>
 
 #include <stdlib.h>
 #include <string.h>
 
 #include <gtest/gtest.h>
 
-#include <openssl/bn.h>
-#include <openssl/bytestring.h>
-#include <openssl/crypto.h>
-#include <openssl/err.h>
-#include <openssl/nid.h>
+#include <openssl_grpc/bn.h>
+#include <openssl_grpc/bytestring.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/nid.h>
 
 #include "../fipsmodule/bn/internal.h"
 #include "../fipsmodule/rsa/internal.h"

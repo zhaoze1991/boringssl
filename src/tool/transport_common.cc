@@ -20,7 +20,7 @@
 #define _SCL_SECURE_NO_WARNINGS
 #endif
 
-#include <openssl/base.h>
+#include <openssl_grpc/base.h>
 
 #include <string>
 #include <vector>
@@ -59,9 +59,9 @@ typedef int ssize_t;
 OPENSSL_MSVC_PRAGMA(comment(lib, "Ws2_32.lib"))
 #endif
 
-#include <openssl/err.h>
-#include <openssl/ssl.h>
-#include <openssl/x509.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/ssl.h>
+#include <openssl_grpc/x509.h>
 
 #include "../crypto/internal.h"
 #include "internal.h"

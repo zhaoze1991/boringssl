@@ -14,8 +14,8 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/rand.h>
-#include <openssl/sha.h>
+#include <openssl_grpc/rand.h>
+#include <openssl_grpc/sha.h>
 
 #include "internal.h"
 #include "../../test/file_test.h"

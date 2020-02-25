@@ -22,16 +22,16 @@
 #include <unistd.h>
 #include <cstdarg>
 
-#include <openssl/aes.h>
-#include <openssl/bn.h>
-#include <openssl/digest.h>
-#include <openssl/ec.h>
-#include <openssl/ec_key.h>
-#include <openssl/ecdsa.h>
-#include <openssl/hmac.h>
-#include <openssl/obj.h>
-#include <openssl/sha.h>
-#include <openssl/span.h>
+#include <openssl_grpc/aes.h>
+#include <openssl_grpc/bn.h>
+#include <openssl_grpc/digest.h>
+#include <openssl_grpc/ec.h>
+#include <openssl_grpc/ec_key.h>
+#include <openssl_grpc/ecdsa.h>
+#include <openssl_grpc/hmac.h>
+#include <openssl_grpc/obj.h>
+#include <openssl_grpc/sha.h>
+#include <openssl_grpc/span.h>
 
 #include "../../../../crypto/fipsmodule/rand/internal.h"
 

@@ -20,7 +20,7 @@
 
 #include <errno.h>
 
-#include <openssl/digest.h>
+#include <openssl_grpc/digest.h>
 
 #include "cavp_test_util.h"
 #include "../crypto/fipsmodule/tls/internal.h"

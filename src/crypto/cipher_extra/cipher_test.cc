@@ -61,9 +61,9 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/cipher.h>
-#include <openssl/err.h>
-#include <openssl/span.h>
+#include <openssl_grpc/cipher.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/span.h>
 
 #include "../test/file_test.h"
 #include "../test/test_util.h"

@@ -1,4 +1,4 @@
-#include <openssl/ssl.h>
+#include <openssl_grpc/ssl.h>
 
 int BORINGSSL_enum_c_type_test(void);
 

@@ -17,8 +17,8 @@
 #include <errno.h>
 #include <string.h>
 
-#include <openssl/bio.h>
-#include <openssl/mem.h>
+#include <openssl_grpc/bio.h>
+#include <openssl_grpc/mem.h>
 
 #include "../../crypto/internal.h"
 

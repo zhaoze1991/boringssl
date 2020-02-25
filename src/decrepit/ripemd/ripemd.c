@@ -54,7 +54,7 @@
  * copied and put under another distribution licence
  * [including the GNU Public Licence.] */
 
-#include <openssl/ripemd.h>
+#include <openssl_grpc/ripemd.h>
 
 #include <string.h>
 

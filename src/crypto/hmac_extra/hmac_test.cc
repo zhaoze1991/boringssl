@@ -60,8 +60,8 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/digest.h>
-#include <openssl/hmac.h>
+#include <openssl_grpc/digest.h>
+#include <openssl_grpc/hmac.h>
 
 #include "../test/file_test.h"
 #include "../test/test_util.h"

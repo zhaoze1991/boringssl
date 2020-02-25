@@ -51,7 +51,7 @@
  * ====================================================================
  */
 
-#include <openssl/evp.h>
+#include <openssl_grpc/evp.h>
 
 #include <stdio.h>
 #include <stdint.h>
@@ -70,12 +70,12 @@ OPENSSL_MSVC_PRAGMA(warning(pop))
 
 #include <gtest/gtest.h>
 
-#include <openssl/bytestring.h>
-#include <openssl/crypto.h>
-#include <openssl/digest.h>
-#include <openssl/dsa.h>
-#include <openssl/err.h>
-#include <openssl/rsa.h>
+#include <openssl_grpc/bytestring.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/digest.h>
+#include <openssl_grpc/dsa.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/rsa.h>
 
 #include "../test/file_test.h"
 #include "../test/test_util.h"

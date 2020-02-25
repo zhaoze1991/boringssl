@@ -21,14 +21,14 @@
 
 #include <algorithm>
 
-#include <openssl/bio.h>
-#include <openssl/bytestring.h>
-#include <openssl/err.h>
-#include <openssl/evp.h>
-#include <openssl/rand.h>
-#include <openssl/rsa.h>
-#include <openssl/ssl.h>
-#include <openssl/x509.h>
+#include <openssl_grpc/bio.h>
+#include <openssl_grpc/bytestring.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/evp.h>
+#include <openssl_grpc/rand.h>
+#include <openssl_grpc/rsa.h>
+#include <openssl_grpc/ssl.h>
+#include <openssl_grpc/x509.h>
 
 #include "../internal.h"
 #include "./fuzzer_tags.h"

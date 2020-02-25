@@ -20,8 +20,8 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/crypto.h>
-#include <openssl/chacha.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/chacha.h>
 
 #include "internal.h"
 #include "../internal.h"

@@ -17,7 +17,7 @@
 
 #include <functional>
 
-#include <openssl/base.h>
+#include <openssl_grpc/base.h>
 
 #include "settings_writer.h"
 

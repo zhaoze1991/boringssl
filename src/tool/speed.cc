@@ -24,20 +24,20 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <openssl/aead.h>
-#include <openssl/aes.h>
-#include <openssl/bn.h>
-#include <openssl/curve25519.h>
-#include <openssl/digest.h>
-#include <openssl/err.h>
-#include <openssl/ec.h>
-#include <openssl/ecdsa.h>
-#include <openssl/ec_key.h>
-#include <openssl/evp.h>
-#include <openssl/hrss.h>
-#include <openssl/nid.h>
-#include <openssl/rand.h>
-#include <openssl/rsa.h>
+#include <openssl_grpc/aead.h>
+#include <openssl_grpc/aes.h>
+#include <openssl_grpc/bn.h>
+#include <openssl_grpc/curve25519.h>
+#include <openssl_grpc/digest.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/ec.h>
+#include <openssl_grpc/ecdsa.h>
+#include <openssl_grpc/ec_key.h>
+#include <openssl_grpc/evp.h>
+#include <openssl_grpc/hrss.h>
+#include <openssl_grpc/nid.h>
+#include <openssl_grpc/rand.h>
+#include <openssl_grpc/rsa.h>
 
 #if defined(OPENSSL_WINDOWS)
 OPENSSL_MSVC_PRAGMA(warning(push, 3))

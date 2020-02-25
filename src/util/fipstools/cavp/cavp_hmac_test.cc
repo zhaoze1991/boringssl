@@ -17,9 +17,9 @@
 
 #include <stdlib.h>
 
-#include <openssl/crypto.h>
-#include <openssl/hmac.h>
-#include <openssl/span.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/hmac.h>
+#include <openssl_grpc/span.h>
 
 #include "../crypto/test/file_test.h"
 #include "../crypto/test/test_util.h"

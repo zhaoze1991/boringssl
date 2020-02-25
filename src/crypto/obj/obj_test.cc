@@ -14,10 +14,10 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/asn1.h>
-#include <openssl/bytestring.h>
-#include <openssl/crypto.h>
-#include <openssl/obj.h>
+#include <openssl_grpc/asn1.h>
+#include <openssl_grpc/bytestring.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/obj.h>
 
 #include "../internal.h"
 

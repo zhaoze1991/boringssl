@@ -14,16 +14,16 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/bio.h>
-#include <openssl/bytestring.h>
-#include <openssl/crypto.h>
-#include <openssl/err.h>
-#include <openssl/evp.h>
-#include <openssl/pkcs8.h>
-#include <openssl/mem.h>
-#include <openssl/span.h>
-#include <openssl/stack.h>
-#include <openssl/x509.h>
+#include <openssl_grpc/bio.h>
+#include <openssl_grpc/bytestring.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/evp.h>
+#include <openssl_grpc/pkcs8.h>
+#include <openssl_grpc/mem.h>
+#include <openssl_grpc/span.h>
+#include <openssl_grpc/stack.h>
+#include <openssl_grpc/x509.h>
 
 #include "../test/test_util.h"
 

@@ -19,8 +19,8 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/err.h>
-#include <openssl/evp.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/evp.h>
 
 #include "../test/file_test.h"
 #include "../test/test_util.h"
