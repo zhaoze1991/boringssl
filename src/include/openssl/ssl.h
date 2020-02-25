@@ -2524,6 +2524,13 @@ OPENSSL_EXPORT int SSL_set1_verify_cert_store(SSL *ssl, X509_STORE *store);
 // Ed25519.
 OPENSSL_EXPORT void SSL_CTX_set_ed25519_enabled(SSL_CTX *ctx, int enabled);
 
+// SSL_CTX_set_rsa_pss_rsae_certs_enabled configures whether |ctx| advertises
+// support for rsa_pss_rsae_* signatures within the certificate chain. It is
+// enabled by default but should be disabled if using a custom certificate
+// verifier which does not support RSA-PSS signatures.
+OPENSSL_EXPORT void SSL_CTX_set_rsa_pss_rsae_certs_enabled(SSL_CTX *ctx,
+                                                           int enabled);
+
 // SSL_CTX_set_verify_algorithm_prefs configures |ctx| to use |prefs| as the
 // preference list when verifying signature's from the peer's long-term key. It
 // returns one on zero on error. |prefs| should not include the internal-only
@@ -3049,6 +3056,19 @@ OPENSSL_EXPORT const char *SSL_get_psk_identity_hint(const SSL *ssl);
 // SSL_get_psk_identity, after the handshake completes, returns the PSK identity
 // that was negotiated by |ssl| or NULL if PSK was not used.
 OPENSSL_EXPORT const char *SSL_get_psk_identity(const SSL *ssl);
+
+
+// Post-quantum experiment signaling extension.
+//
+// *** EXPERIMENTAL ***
+//
+// In order to define a control group in an experiment of post-quantum key
+// agreements, clients and servers may send a non-IANA defined extension as a
+// signaling bit. These functions should not be used without explicit permission
+// from BoringSSL-team.
+
+OPENSSL_EXPORT void SSL_CTX_enable_pq_experiment_signal(SSL_CTX *ctx);
+OPENSSL_EXPORT int SSL_pq_experiment_signal_seen(const SSL *ssl);
 
 
 // QUIC transport parameters.
@@ -3926,11 +3946,6 @@ OPENSSL_EXPORT void SSL_set_ignore_tls13_downgrade(SSL *ssl, int ignore);
 // mechanism would have aborted |ssl|'s handshake and zero otherwise.
 OPENSSL_EXPORT int SSL_is_tls13_downgrade(const SSL *ssl);
 
-// SSL_used_hello_retry_request returns one if the TLS 1.3 HelloRetryRequest
-// message has been either sent by the server or received by the client. It
-// returns zero otherwise.
-OPENSSL_EXPORT int SSL_used_hello_retry_request(const SSL *ssl);
-
 // SSL_set_jdk11_workaround configures whether to workaround various bugs in
 // JDK 11's TLS 1.3 implementation by disabling TLS 1.3 for such clients.
 //
@@ -4104,11 +4119,6 @@ OPENSSL_EXPORT void SSL_set_state(SSL *ssl, int state);
 // SSL_get_shared_ciphers writes an empty string to |buf| and returns a
 // pointer to |buf|, or NULL if |len| is less than or equal to zero.
 OPENSSL_EXPORT char *SSL_get_shared_ciphers(const SSL *ssl, char *buf, int len);
-
-// SSL_get_shared_sigalgs returns zero.
-OPENSSL_EXPORT int SSL_get_shared_sigalgs(SSL *ssl, int idx, int *psign,
-                                          int *phash, int *psignandhash,
-                                          uint8_t *rsig, uint8_t *rhash);
 
 // SSL_MODE_HANDSHAKE_CUTTHROUGH is the same as SSL_MODE_ENABLE_FALSE_START.
 #define SSL_MODE_HANDSHAKE_CUTTHROUGH SSL_MODE_ENABLE_FALSE_START
@@ -4656,74 +4666,6 @@ OPENSSL_EXPORT int SSL_CTX_set_tlsext_status_arg(SSL_CTX *ctx, void *arg);
 // is no need to define conflicting macros.
 #if !defined(BORINGSSL_PREFIX)
 
-#define DTLSv1_get_timeout DTLSv1_get_timeout
-#define DTLSv1_handle_timeout DTLSv1_handle_timeout
-#define SSL_CTX_add0_chain_cert SSL_CTX_add0_chain_cert
-#define SSL_CTX_add1_chain_cert SSL_CTX_add1_chain_cert
-#define SSL_CTX_add_extra_chain_cert SSL_CTX_add_extra_chain_cert
-#define SSL_CTX_clear_extra_chain_certs SSL_CTX_clear_extra_chain_certs
-#define SSL_CTX_clear_chain_certs SSL_CTX_clear_chain_certs
-#define SSL_CTX_clear_mode SSL_CTX_clear_mode
-#define SSL_CTX_clear_options SSL_CTX_clear_options
-#define SSL_CTX_get0_chain_certs SSL_CTX_get0_chain_certs
-#define SSL_CTX_get_extra_chain_certs SSL_CTX_get_extra_chain_certs
-#define SSL_CTX_get_max_cert_list SSL_CTX_get_max_cert_list
-#define SSL_CTX_get_mode SSL_CTX_get_mode
-#define SSL_CTX_get_options SSL_CTX_get_options
-#define SSL_CTX_get_read_ahead SSL_CTX_get_read_ahead
-#define SSL_CTX_get_session_cache_mode SSL_CTX_get_session_cache_mode
-#define SSL_CTX_get_tlsext_ticket_keys SSL_CTX_get_tlsext_ticket_keys
-#define SSL_CTX_need_tmp_RSA SSL_CTX_need_tmp_RSA
-#define SSL_CTX_sess_get_cache_size SSL_CTX_sess_get_cache_size
-#define SSL_CTX_sess_number SSL_CTX_sess_number
-#define SSL_CTX_sess_set_cache_size SSL_CTX_sess_set_cache_size
-#define SSL_CTX_set0_chain SSL_CTX_set0_chain
-#define SSL_CTX_set1_chain SSL_CTX_set1_chain
-#define SSL_CTX_set1_curves SSL_CTX_set1_curves
-#define SSL_CTX_set_max_cert_list SSL_CTX_set_max_cert_list
-#define SSL_CTX_set_max_send_fragment SSL_CTX_set_max_send_fragment
-#define SSL_CTX_set_mode SSL_CTX_set_mode
-#define SSL_CTX_set_msg_callback_arg SSL_CTX_set_msg_callback_arg
-#define SSL_CTX_set_options SSL_CTX_set_options
-#define SSL_CTX_set_read_ahead SSL_CTX_set_read_ahead
-#define SSL_CTX_set_session_cache_mode SSL_CTX_set_session_cache_mode
-#define SSL_CTX_set_tlsext_servername_arg SSL_CTX_set_tlsext_servername_arg
-#define SSL_CTX_set_tlsext_servername_callback \
-    SSL_CTX_set_tlsext_servername_callback
-#define SSL_CTX_set_tlsext_ticket_key_cb SSL_CTX_set_tlsext_ticket_key_cb
-#define SSL_CTX_set_tlsext_ticket_keys SSL_CTX_set_tlsext_ticket_keys
-#define SSL_CTX_set_tmp_dh SSL_CTX_set_tmp_dh
-#define SSL_CTX_set_tmp_ecdh SSL_CTX_set_tmp_ecdh
-#define SSL_CTX_set_tmp_rsa SSL_CTX_set_tmp_rsa
-#define SSL_add0_chain_cert SSL_add0_chain_cert
-#define SSL_add1_chain_cert SSL_add1_chain_cert
-#define SSL_clear_chain_certs SSL_clear_chain_certs
-#define SSL_clear_mode SSL_clear_mode
-#define SSL_clear_options SSL_clear_options
-#define SSL_get0_certificate_types SSL_get0_certificate_types
-#define SSL_get0_chain_certs SSL_get0_chain_certs
-#define SSL_get_max_cert_list SSL_get_max_cert_list
-#define SSL_get_mode SSL_get_mode
-#define SSL_get_options SSL_get_options
-#define SSL_get_secure_renegotiation_support \
-    SSL_get_secure_renegotiation_support
-#define SSL_need_tmp_RSA SSL_need_tmp_RSA
-#define SSL_num_renegotiations SSL_num_renegotiations
-#define SSL_session_reused SSL_session_reused
-#define SSL_set0_chain SSL_set0_chain
-#define SSL_set1_chain SSL_set1_chain
-#define SSL_set1_curves SSL_set1_curves
-#define SSL_set_max_cert_list SSL_set_max_cert_list
-#define SSL_set_max_send_fragment SSL_set_max_send_fragment
-#define SSL_set_mode SSL_set_mode
-#define SSL_set_msg_callback_arg SSL_set_msg_callback_arg
-#define SSL_set_mtu SSL_set_mtu
-#define SSL_set_options SSL_set_options
-#define SSL_set_tlsext_host_name SSL_set_tlsext_host_name
-#define SSL_set_tmp_dh SSL_set_tmp_dh
-#define SSL_set_tmp_ecdh SSL_set_tmp_ecdh
-#define SSL_set_tmp_rsa SSL_set_tmp_rsa
-#define SSL_total_renegotiations SSL_total_renegotiations
 
 #endif // !defined(BORINGSSL_PREFIX)
 
