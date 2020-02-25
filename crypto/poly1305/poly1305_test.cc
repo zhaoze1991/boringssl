@@ -19,7 +19,7 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/poly1305.h>
+#include <openssl_grpc/poly1305.h>
 
 #include "../internal.h"
 #include "../test/file_test.h"

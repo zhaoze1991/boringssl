@@ -20,9 +20,9 @@
 #include <algorithm>
 #include <array>
 
-#include <openssl/mem.h>
-#include <openssl/rand.h>
-#include <openssl/span.h>
+#include <openssl_grpc/mem.h>
+#include <openssl_grpc/rand.h>
+#include <openssl_grpc/span.h>
 
 #if defined(OPENSSL_X86_64) && defined(SUPPORTS_ABI_TEST)
 #if defined(OPENSSL_LINUX) && defined(BORINGSSL_HAVE_LIBUNWIND)

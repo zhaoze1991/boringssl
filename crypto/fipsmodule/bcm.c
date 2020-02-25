@@ -16,7 +16,7 @@
 #define _GNU_SOURCE  // needed for syscall() on Linux.
 #endif
 
-#include <openssl/crypto.h>
+#include <openssl_grpc/crypto.h>
 
 #include <stdlib.h>
 #if defined(BORINGSSL_FIPS)
@@ -24,9 +24,9 @@
 #include <unistd.h>
 #endif
 
-#include <openssl/digest.h>
-#include <openssl/hmac.h>
-#include <openssl/sha.h>
+#include <openssl_grpc/digest.h>
+#include <openssl_grpc/hmac.h>
+#include <openssl_grpc/sha.h>
 
 #include "../internal.h"
 

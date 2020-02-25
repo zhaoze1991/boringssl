@@ -17,13 +17,13 @@
 
 #include <vector>
 
-#include <openssl/bn.h>
-#include <openssl/crypto.h>
-#include <openssl/digest.h>
-#include <openssl/ec_key.h>
-#include <openssl/ecdsa.h>
-#include <openssl/err.h>
-#include <openssl/nid.h>
+#include <openssl_grpc/bn.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/digest.h>
+#include <openssl_grpc/ec_key.h>
+#include <openssl_grpc/ecdsa.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/nid.h>
 
 #include "../crypto/test/file_test.h"
 #include "cavp_test_util.h"

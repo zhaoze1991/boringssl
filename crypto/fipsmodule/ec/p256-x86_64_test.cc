@@ -12,18 +12,18 @@
  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. */
 
-#include <openssl/base.h>
+#include <openssl_grpc/base.h>
 
 #include <stdio.h>
 #include <string.h>
 
 #include <gtest/gtest.h>
 
-#include <openssl/bn.h>
-#include <openssl/cpu.h>
-#include <openssl/ec.h>
-#include <openssl/mem.h>
-#include <openssl/nid.h>
+#include <openssl_grpc/bn.h>
+#include <openssl_grpc/cpu.h>
+#include <openssl_grpc/ec.h>
+#include <openssl_grpc/mem.h>
+#include <openssl_grpc/nid.h>
 
 #include "internal.h"
 #include "../bn/internal.h"

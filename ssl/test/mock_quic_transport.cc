@@ -14,7 +14,7 @@
 
 #include "mock_quic_transport.h"
 
-#include <openssl/span.h>
+#include <openssl_grpc/span.h>
 
 #include <cstring>
 #include <limits>

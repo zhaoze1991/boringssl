@@ -12,7 +12,7 @@
  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. */
 
-#include <openssl/base.h>
+#include <openssl_grpc/base.h>
 
 #if !defined(OPENSSL_WINDOWS)
 #include <arpa/inet.h>
@@ -37,19 +37,19 @@ OPENSSL_MSVC_PRAGMA(comment(lib, "Ws2_32.lib"))
 #include <string.h>
 #include <time.h>
 
-#include <openssl/aead.h>
-#include <openssl/bio.h>
-#include <openssl/bytestring.h>
-#include <openssl/cipher.h>
-#include <openssl/crypto.h>
-#include <openssl/digest.h>
-#include <openssl/err.h>
-#include <openssl/evp.h>
-#include <openssl/hmac.h>
-#include <openssl/nid.h>
-#include <openssl/rand.h>
-#include <openssl/ssl.h>
-#include <openssl/x509.h>
+#include <openssl_grpc/aead.h>
+#include <openssl_grpc/bio.h>
+#include <openssl_grpc/bytestring.h>
+#include <openssl_grpc/cipher.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/digest.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/evp.h>
+#include <openssl_grpc/hmac.h>
+#include <openssl_grpc/nid.h>
+#include <openssl_grpc/rand.h>
+#include <openssl_grpc/ssl.h>
+#include <openssl_grpc/x509.h>
 
 #include <functional>
 #include <memory>

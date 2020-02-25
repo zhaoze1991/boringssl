@@ -18,7 +18,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include <openssl/ssl.h>
+#include <openssl_grpc/ssl.h>
 
 #include "internal.h"
 

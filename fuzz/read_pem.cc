@@ -12,10 +12,10 @@
  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. */
 
-#include <openssl/bio.h>
-#include <openssl/err.h>
-#include <openssl/mem.h>
-#include <openssl/pem.h>
+#include <openssl_grpc/bio.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/mem.h>
+#include <openssl_grpc/pem.h>
 
 
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t *buf, size_t len) {

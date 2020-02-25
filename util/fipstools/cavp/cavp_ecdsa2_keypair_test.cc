@@ -19,11 +19,11 @@
 
 #include <vector>
 
-#include <openssl/bn.h>
-#include <openssl/crypto.h>
-#include <openssl/ec_key.h>
-#include <openssl/err.h>
-#include <openssl/nid.h>
+#include <openssl_grpc/bn.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/ec_key.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/nid.h>
 
 #include "../crypto/test/file_test.h"
 #include "../crypto/test/test_util.h"

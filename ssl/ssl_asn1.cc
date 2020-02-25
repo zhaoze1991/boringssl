@@ -80,17 +80,17 @@
  * OTHER ENTITY BASED ON INFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS OR
  * OTHERWISE. */
 
-#include <openssl/ssl.h>
+#include <openssl_grpc/ssl.h>
 
 #include <limits.h>
 #include <string.h>
 
 #include <utility>
 
-#include <openssl/bytestring.h>
-#include <openssl/err.h>
-#include <openssl/mem.h>
-#include <openssl/x509.h>
+#include <openssl_grpc/bytestring.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/mem.h>
+#include <openssl_grpc/x509.h>
 
 #include "../crypto/internal.h"
 #include "internal.h"

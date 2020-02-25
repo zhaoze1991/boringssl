@@ -53,8 +53,8 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/mem.h>
-#include <openssl/rand.h>
+#include <openssl_grpc/mem.h>
+#include <openssl_grpc/rand.h>
 
 
 static uint8_t FromBool8(bool b) {

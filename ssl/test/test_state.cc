@@ -14,7 +14,7 @@
 
 #include "test_state.h"
 
-#include <openssl/ssl.h>
+#include <openssl_grpc/ssl.h>
 
 #include "../../crypto/internal.h"
 #include "../internal.h"

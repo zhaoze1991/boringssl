@@ -12,8 +12,8 @@
  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. */
 
-#include <openssl/err.h>
-#include <openssl/evp.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/evp.h>
 
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t *buf, size_t len) {
   EVP_PKEY_free(d2i_AutoPrivateKey(NULL, &buf, len));

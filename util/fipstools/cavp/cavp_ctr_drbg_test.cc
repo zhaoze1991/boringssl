@@ -15,7 +15,7 @@
 // cavp_ctr_drbg_test processes a NIST CAVP DRBG800-90A test vector request
 // file and emits the corresponding response.
 
-#include <openssl/crypto.h>
+#include <openssl_grpc/crypto.h>
 
 #include <stdlib.h>
 

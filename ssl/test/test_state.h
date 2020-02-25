@@ -15,7 +15,7 @@
 #ifndef HEADER_TEST_STATE
 #define HEADER_TEST_STATE
 
-#include <openssl/base.h>
+#include <openssl_grpc/base.h>
 
 #include <memory>
 #include <string>

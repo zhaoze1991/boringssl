@@ -12,7 +12,7 @@
  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. */
 
-#include <openssl/stack.h>
+#include <openssl_grpc/stack.h>
 
 #include <limits.h>
 
@@ -23,7 +23,7 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/mem.h>
+#include <openssl_grpc/mem.h>
 
 
 // Define a custom stack type for testing.

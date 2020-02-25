@@ -17,10 +17,10 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/bio.h>
-#include <openssl/crypto.h>
-#include <openssl/err.h>
-#include <openssl/mem.h>
+#include <openssl_grpc/bio.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/mem.h>
 
 #include "../internal.h"
 #include "../test/test_util.h"

@@ -19,16 +19,16 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/bn.h>
-#include <openssl/bytestring.h>
-#include <openssl/crypto.h>
-#include <openssl/ec.h>
-#include <openssl/ec_key.h>
-#include <openssl/ecdh.h>
-#include <openssl/err.h>
-#include <openssl/evp.h>
-#include <openssl/nid.h>
-#include <openssl/sha.h>
+#include <openssl_grpc/bn.h>
+#include <openssl_grpc/bytestring.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/ec.h>
+#include <openssl_grpc/ec_key.h>
+#include <openssl_grpc/ecdh.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/evp.h>
+#include <openssl_grpc/nid.h>
+#include <openssl_grpc/sha.h>
 
 #include "../test/file_test.h"
 #include "../test/test_util.h"

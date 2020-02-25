@@ -21,7 +21,7 @@
 #include <type_traits>
 #include <vector>
 
-#include <openssl/base.h>
+#include <openssl_grpc/base.h>
 
 #include "../internal.h"
 

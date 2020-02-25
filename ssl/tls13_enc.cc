@@ -12,7 +12,7 @@
  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. */
 
-#include <openssl/ssl.h>
+#include <openssl_grpc/ssl.h>
 
 #include <assert.h>
 #include <string.h>
@@ -20,12 +20,12 @@
 #include <algorithm>
 #include <utility>
 
-#include <openssl/aead.h>
-#include <openssl/bytestring.h>
-#include <openssl/digest.h>
-#include <openssl/hkdf.h>
-#include <openssl/hmac.h>
-#include <openssl/mem.h>
+#include <openssl_grpc/aead.h>
+#include <openssl_grpc/bytestring.h>
+#include <openssl_grpc/digest.h>
+#include <openssl_grpc/hkdf.h>
+#include <openssl_grpc/hmac.h>
+#include <openssl_grpc/mem.h>
 
 #include "../crypto/internal.h"
 #include "internal.h"

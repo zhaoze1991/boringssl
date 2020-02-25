@@ -12,10 +12,10 @@
  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. */
 
-#include <openssl/bytestring.h>
-#include <openssl/evp.h>
-#include <openssl/pkcs8.h>
-#include <openssl/x509.h>
+#include <openssl_grpc/bytestring.h>
+#include <openssl_grpc/evp.h>
+#include <openssl_grpc/pkcs8.h>
+#include <openssl_grpc/x509.h>
 
 
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t *buf, size_t len) {

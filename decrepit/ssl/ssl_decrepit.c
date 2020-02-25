@@ -108,7 +108,7 @@
  *
  */
 
-#include <openssl/ssl.h>
+#include <openssl_grpc/ssl.h>
 
 #if !defined(OPENSSL_WINDOWS) && !defined(OPENSSL_PNACL)
 
@@ -116,8 +116,8 @@
 #include <errno.h>
 #include <string.h>
 
-#include <openssl/err.h>
-#include <openssl/mem.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/mem.h>
 
 
 int SSL_add_dir_cert_subjects_to_stack(STACK_OF(X509_NAME) *stack,

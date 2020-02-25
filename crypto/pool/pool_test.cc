@@ -14,7 +14,7 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/pool.h>
+#include <openssl_grpc/pool.h>
 
 #include "../test/test_util.h"
 

@@ -14,12 +14,12 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/bytestring.h>
-#include <openssl/crypto.h>
-#include <openssl/mem.h>
-#include <openssl/pkcs7.h>
-#include <openssl/stack.h>
-#include <openssl/x509.h>
+#include <openssl_grpc/bytestring.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/mem.h>
+#include <openssl_grpc/pkcs7.h>
+#include <openssl_grpc/stack.h>
+#include <openssl_grpc/x509.h>
 
 #include "../internal.h"
 #include "../test/test_util.h"

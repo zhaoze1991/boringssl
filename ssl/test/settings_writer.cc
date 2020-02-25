@@ -16,7 +16,7 @@
 
 #include <stdio.h>
 
-#include <openssl/ssl.h>
+#include <openssl_grpc/ssl.h>
 
 #include "fuzzer_tags.h"
 #include "test_config.h"

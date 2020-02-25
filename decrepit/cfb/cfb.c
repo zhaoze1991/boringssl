@@ -12,12 +12,12 @@
 // OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
 // CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. */
 
-#include <openssl/cipher.h>
+#include <openssl_grpc/cipher.h>
 
 #include <string.h>
 
-#include <openssl/aes.h>
-#include <openssl/obj.h>
+#include <openssl_grpc/aes.h>
+#include <openssl_grpc/obj.h>
 
 #include "../../crypto/internal.h"
 

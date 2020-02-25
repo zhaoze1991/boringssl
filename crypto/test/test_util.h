@@ -24,7 +24,7 @@
 #include <string>
 #include <vector>
 
-#include <openssl/span.h>
+#include <openssl_grpc/span.h>
 
 #include "../internal.h"
 

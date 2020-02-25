@@ -14,9 +14,9 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/cpu.h>
-#include <openssl/hrss.h>
-#include <openssl/rand.h>
+#include <openssl_grpc/cpu.h>
+#include <openssl_grpc/hrss.h>
+#include <openssl_grpc/rand.h>
 
 #include "../test/abi_test.h"
 #include "../test/test_util.h"

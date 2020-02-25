@@ -14,10 +14,10 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/crypto.h>
-#include <openssl/err.h>
-#include <openssl/pkcs8.h>
-#include <openssl/x509.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/pkcs8.h>
+#include <openssl_grpc/x509.h>
 
 #include "../internal.h"
 

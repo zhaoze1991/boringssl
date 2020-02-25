@@ -12,9 +12,9 @@
  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. */
 
-#include <openssl/bn.h>
-#include <openssl/bytestring.h>
-#include <openssl/span.h>
+#include <openssl_grpc/bn.h>
+#include <openssl_grpc/bytestring.h>
+#include <openssl_grpc/span.h>
 
 #define CHECK(expr)                 \
   do {                              \

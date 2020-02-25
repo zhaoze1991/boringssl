@@ -19,9 +19,9 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/aead.h>
-#include <openssl/cipher.h>
-#include <openssl/err.h>
+#include <openssl_grpc/aead.h>
+#include <openssl_grpc/cipher.h>
+#include <openssl_grpc/err.h>
 
 #include "../fipsmodule/cipher/internal.h"
 #include "../internal.h"

@@ -22,8 +22,8 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/aes.h>
-#include <openssl/rand.h>
+#include <openssl_grpc/aes.h>
+#include <openssl_grpc/rand.h>
 
 #include "internal.h"
 #include "../../internal.h"

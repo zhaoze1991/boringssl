@@ -19,7 +19,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#include <openssl/mem.h>
+#include <openssl_grpc/mem.h>
 
 #include "../../crypto/internal.h"
 

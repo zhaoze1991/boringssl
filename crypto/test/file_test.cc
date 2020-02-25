@@ -25,7 +25,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <openssl/err.h>
+#include <openssl_grpc/err.h>
 
 #include "../internal.h"
 #include "./test_util.h"

@@ -9,13 +9,13 @@
 
 // Tests for X509 time functions.
 
-#include <openssl/x509.h>
+#include <openssl_grpc/x509.h>
 
 #include <string.h>
 #include <time.h>
 
 #include <gtest/gtest.h>
-#include <openssl/asn1.h>
+#include <openssl_grpc/asn1.h>
 
 struct TestData {
   const char *data;

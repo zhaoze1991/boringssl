@@ -59,11 +59,11 @@
 #include <stdio.h>
 #include <string.h>
 
-#include <openssl/base64.h>
-#include <openssl/bio.h>
-#include <openssl/buffer.h>
-#include <openssl/evp.h>
-#include <openssl/mem.h>
+#include <openssl_grpc/base64.h>
+#include <openssl_grpc/bio.h>
+#include <openssl_grpc/buffer.h>
+#include <openssl_grpc/evp.h>
+#include <openssl_grpc/mem.h>
 
 #include "../../crypto/internal.h"
 

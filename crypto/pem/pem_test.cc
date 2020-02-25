@@ -12,13 +12,13 @@
  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. */
 
-#include <openssl/pem.h>
+#include <openssl_grpc/pem.h>
 
 #include <gtest/gtest.h>
 
-#include <openssl/bio.h>
-#include <openssl/err.h>
-#include <openssl/rsa.h>
+#include <openssl_grpc/bio.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/rsa.h>
 
 
 // Test that implausible ciphers, notably an IV-less RC4, aren't allowed in PEM.

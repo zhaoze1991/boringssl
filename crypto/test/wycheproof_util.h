@@ -15,7 +15,7 @@
 #ifndef OPENSSL_HEADER_CRYPTO_TEST_WYCHEPROOF_UTIL_H
 #define OPENSSL_HEADER_CRYPTO_TEST_WYCHEPROOF_UTIL_H
 
-#include <openssl/base.h>
+#include <openssl_grpc/base.h>
 
 #include <string>
 #include <vector>

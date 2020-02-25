@@ -17,16 +17,16 @@
 
 #include <vector>
 
-#include <openssl/bn.h>
-#include <openssl/crypto.h>
-#include <openssl/digest.h>
-#include <openssl/ecdh.h>
-#include <openssl/ecdsa.h>
-#include <openssl/ec_key.h>
-#include <openssl/err.h>
-#include <openssl/nid.h>
-#include <openssl/sha.h>
-#include <openssl/span.h>
+#include <openssl_grpc/bn.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/digest.h>
+#include <openssl_grpc/ecdh.h>
+#include <openssl_grpc/ecdsa.h>
+#include <openssl_grpc/ec_key.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/nid.h>
+#include <openssl_grpc/sha.h>
+#include <openssl_grpc/span.h>
 
 #include "../crypto/internal.h"
 #include "../crypto/test/file_test.h"

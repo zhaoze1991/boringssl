@@ -21,9 +21,9 @@
 
 #include <memory>
 
-#include <openssl/base64.h>
-#include <openssl/rand.h>
-#include <openssl/ssl.h>
+#include <openssl_grpc/base64.h>
+#include <openssl_grpc/rand.h>
+#include <openssl_grpc/ssl.h>
 
 #include "../../crypto/internal.h"
 #include "../internal.h"

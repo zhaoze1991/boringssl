@@ -17,9 +17,9 @@
 
 #include <stdlib.h>
 
-#include <openssl/cipher.h>
-#include <openssl/crypto.h>
-#include <openssl/err.h>
+#include <openssl_grpc/cipher.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/err.h>
 
 #include "../crypto/test/file_test.h"
 #include "../crypto/test/test_util.h"

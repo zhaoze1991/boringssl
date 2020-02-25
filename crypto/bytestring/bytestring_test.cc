@@ -20,8 +20,8 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/bytestring.h>
-#include <openssl/crypto.h>
+#include <openssl_grpc/bytestring.h>
+#include <openssl_grpc/crypto.h>
 
 #include "internal.h"
 #include "../internal.h"

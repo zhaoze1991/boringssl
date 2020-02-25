@@ -20,9 +20,9 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/base64.h>
-#include <openssl/crypto.h>
-#include <openssl/err.h>
+#include <openssl_grpc/base64.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/err.h>
 
 #include "../internal.h"
 #include "../test/test_util.h"

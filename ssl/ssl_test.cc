@@ -24,18 +24,18 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/aead.h>
-#include <openssl/base64.h>
-#include <openssl/bio.h>
-#include <openssl/cipher.h>
-#include <openssl/crypto.h>
-#include <openssl/err.h>
-#include <openssl/hmac.h>
-#include <openssl/pem.h>
-#include <openssl/sha.h>
-#include <openssl/ssl.h>
-#include <openssl/rand.h>
-#include <openssl/x509.h>
+#include <openssl_grpc/aead.h>
+#include <openssl_grpc/base64.h>
+#include <openssl_grpc/bio.h>
+#include <openssl_grpc/cipher.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/err.h>
+#include <openssl_grpc/hmac.h>
+#include <openssl_grpc/pem.h>
+#include <openssl_grpc/sha.h>
+#include <openssl_grpc/ssl.h>
+#include <openssl_grpc/rand.h>
+#include <openssl_grpc/x509.h>
 
 #include "internal.h"
 #include "../crypto/internal.h"

@@ -59,10 +59,10 @@
 
 #include <gtest/gtest.h>
 
-#include <openssl/crypto.h>
-#include <openssl/mem.h>
-#include <openssl/x509.h>
-#include <openssl/x509v3.h>
+#include <openssl_grpc/crypto.h>
+#include <openssl_grpc/mem.h>
+#include <openssl_grpc/x509.h>
+#include <openssl_grpc/x509v3.h>
 
 #include "../internal.h"
 #include "internal.h"
